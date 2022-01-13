@@ -3,9 +3,9 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <div id="two-way-binding">
-      <input v-model="message" />
+      <input type ="text" v-model="message" />
       <button type="button" @click="rotate">제출</button>
-      <button type="button" @click="getData(), counter()">알림</button>
+      <button type="button" @click="getData()">알림</button>
       <p>{{ message }}</p>
     </div>
   </div>
@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       message: '',
+      count: 0,
     };
   },
   counter() {
@@ -31,7 +32,9 @@ export default {
   },
   methods: {
     getData() {
-      alert(this.message);
+      // eslint-disable-next-line no-alert
+      alert(`${this.message} + 클릭한 횟수 : ${this.count}`);
+      this.count += 1;
     },
     rotate() {
       this.message = this.message.slice(1) + this.message.slice(0, 1);
