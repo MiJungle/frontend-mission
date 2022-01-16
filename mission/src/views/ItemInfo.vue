@@ -10,6 +10,16 @@
           <span class='sellerName'>Libly</span>
           <span class='hashtag'>#여성 #니트</span>
         </a>
+        <div class='productName'>{{product.name}}</div>
+        <div class='discountRate'>{{product.discountRate}}</div>
+        <div class='discountPrice'>{{product.discountPrice}}</div>
+        <div class='originPrice'>{{product.originalPrice}}</div>
+        <div class='buyNow'>
+            <button type="button" @click="getData()"> {{product.discountPrice}} 구매하기 </button>
+        </div>
+        <h3>상품 정보</h3>
+          <div v-html='productDetail'></div>
+          <img class='detailImage' alt='detail image' :src='product.detailImage'/>
       </div>
     </div>
   </div>
@@ -25,12 +35,22 @@ export default {
           name: 'Round Neck Striped Sweater',
           mainImage: 'https://image.freepik.com/free-psd/ecological-tshirt-packaging-mockup_23-2149132440.jpg',
           sellerImage: 'https://cdn.pixabay.com/photo/2017/02/18/14/02/letters-2077238_960_720.png',
+          discountPrice: '46,400원',
+          originalPrice: '58,000원',
+          discountRate: '20%',
+          detailImage: 'https://images.unsplash.com/photo-1618677603544-51162346e165?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
         },
       ],
-
+      productDetail: 'Colors: white <br/>Material: Polyester 44.8% Cotton 55.2% <br/>Size-Free(단면/cm)<br/>총장 61 <br/>가슴 55 <br/>소매 77',
     };
   },
   components: {},
+  methods: {
+    getData() {
+    // eslint-disable-next-line no-alert
+      alert('정말 구매하시겠습니까?');
+    },
+  },
 };
 </script>
 
@@ -43,13 +63,10 @@ export default {
   color: #2c3e50;
 }
 .container {
-    /* width: 375px;
-    height: 667px; */
     background-color: #ffffff;
     margin: auto;
     position: relative;
 }
-
 a.sellerInfo {
   display: block;
   width:100%;
@@ -74,11 +91,51 @@ img.seller {
   background-color: #fff;
   vertical-align: middle;
 }
-
 .sellerName {
   font-weight: bold;
   margin-right: 600px;
   display: inline-block;
   padding-left: 10px;
 }
+
+/* 제품 상세 페이지 */
+div.buyNow {
+  width: 100%;
+  position: fixed;
+  bottom: -0px;
+  z-index: 80;
+}
+.buyNow button {
+  display: inline-block;
+  width: 50%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(228, 228, 247);
+}
+
+div.discountRate {
+  font-weight: bold;
+  color: red;
+  display: inline;
+  margin-right: 10px;
+}
+div.originPrice {
+  text-decoration: line-through;
+  display: inline;
+}
+div.discountPrice {
+  display: inline;
+  margin-right: 10px;
+}
+
+img.detailImage2 {
+  display: block;
+  margin: auto;
+}
+
+img.detailImage {
+  display: block;
+  margin: auto;
+}
+
 </style>
