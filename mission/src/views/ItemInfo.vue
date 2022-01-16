@@ -20,6 +20,29 @@
         <h3>상품 정보</h3>
           <div v-html='productDetail'></div>
           <img class='detailImage' alt='detail image' :src='product.detailImage'/>
+        <h3>리뷰</h3>
+          <div class='reviewsBody'>
+            <ul class='productReviews'>
+                <li id='review301'>
+                  <img class='reviewImage' alt='review image' :src='reviewImage'/>
+                  <div class='reviewInfoTop'>
+                    <div class='reviewCustomerID'>DDe**</div>
+                    <div class='reviewDate'>2021.12.05</div>
+                  </div>
+                  <div class='reviewTitle'>만족해요</div>
+                  <div class='reviewContent'>핏이 예쁘네요. 색상도 화면 그대로에요</div>
+                </li>
+                <li id='review302'>
+                  <div class='reviewInfoTop'>
+                    <div class='reviewCustomerID'>Le***</div>
+                    <div class='reviewDate'>2021.12.11</div>
+                  </div>
+                  <div class='reviewTitle'>예뻐요</div>
+                  <div class='reviewContent'>괜찮아서 한개 더 주문했어요. 가격대비 나쁘지 않아요</div>
+                </li>
+            </ul>
+            <ul class='footer'></ul>
+          </div>
       </div>
     </div>
   </div>
@@ -42,6 +65,8 @@ export default {
         },
       ],
       productDetail: 'Colors: white <br/>Material: Polyester 44.8% Cotton 55.2% <br/>Size-Free(단면/cm)<br/>총장 61 <br/>가슴 55 <br/>소매 77',
+      reviewImage: 'https://image.freepik.com/free-photo/fashionable-young-caucasian-woman-posing_273609-14657.jpg',
+
     };
   },
   components: {},
@@ -62,6 +87,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+/* 제품 상단 판매자 정보*/
 .container {
     background-color: #ffffff;
     margin: auto;
@@ -138,4 +164,63 @@ img.detailImage {
   margin: auto;
 }
 
+/* 리뷰 */
+div.reviewsBody {
+  width: 650px;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+#review301 {
+  position: relative;
+}
+div.reviewInfoTop {
+  display: flex;
+}
+div.reviewCustomerID {
+  margin-right: 10px;
+  display: inline-block;
+  justify-content: left;
+  font-weight: bold;
+}
+div.reviewDate {
+  justify-content: left;
+  display: inline-block;
+}
+
+div.reviewTitle {
+  display: block;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+div.reviewContent {
+  display: block;
+  margin-bottom: 12px;
+  padding-bottom: 13px;
+  border-bottom: 3px solid #656769;
+  text-align: left;
+}
+
+img.reviewImage {
+  display: block;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  right: 10%;
+  bottom: 5%;
+  margin-bottom: 5px;
+}
+
+/* Footer */
+
+ul.footer {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
 </style>
