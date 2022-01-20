@@ -6,9 +6,9 @@
       <div v-for ='product in products' :key='product.name'>
         <img class='main' :src='product.mainImage'/>
         <a class='sellerInfo'>
-          <img class='seller' alt='review image' :src='product.sellerImage'/>
-          <span class='sellerName'>Libly</span>
-          <span class='hashtag'>#여성 #니트</span>
+          <img class='seller' alt='review image' :src='product.seller.sellerImage'/>
+          <span class='sellerName'>{{product.seller.name}}</span>
+          <span class='hashtag'>{{product.seller.hashTag}}</span>
         </a>
         <div class='productName'>{{product.name}}</div>
         <div class='discountRate'>{{product.discountRate}}</div>
@@ -23,23 +23,17 @@
         <h3>리뷰</h3>
           <div class='reviewsBody'>
             <ul class='productReviews'>
-                <li id='review301'>
-                  <img class='reviewImage' alt='review image' :src='reviewImage'/>
+              <div v-for ='review in reviews' :key='review.name'>
+                <li id='review'>
+                  <img class='reviewImage' alt='review image' :src='reviews.reviewImage'/>
                   <div class='reviewInfoTop'>
-                    <div class='reviewCustomerID'>DDe**</div>
-                    <div class='reviewDate'>2021.12.05</div>
+                    <div class='reviewCustomerID'>{{review.name}}</div>
+                    <div class='reviewDate'>{{review.date}}</div>
                   </div>
-                  <div class='reviewTitle'>만족해요</div>
-                  <div class='reviewContent'>핏이 예쁘네요. 색상도 화면 그대로에요</div>
+                  <div class='reviewTitle'>{{review.title}}</div>
+                  <div class='reviewContent'>{{review.content}}</div>
                 </li>
-                <li id='review302'>
-                  <div class='reviewInfoTop'>
-                    <div class='reviewCustomerID'>Le***</div>
-                    <div class='reviewDate'>2021.12.11</div>
-                  </div>
-                  <div class='reviewTitle'>예뻐요</div>
-                  <div class='reviewContent'>괜찮아서 한개 더 주문했어요. 가격대비 나쁘지 않아요</div>
-                </li>
+              </div>
             </ul>
             <ul class='footer'></ul>
           </div>
@@ -57,18 +51,37 @@ export default {
         {
           name: 'Round Neck Striped Sweater',
           mainImage: 'https://image.freepik.com/free-psd/ecological-tshirt-packaging-mockup_23-2149132440.jpg',
-          sellerImage: 'https://cdn.pixabay.com/photo/2017/02/18/14/02/letters-2077238_960_720.png',
           discountPrice: '46,400원',
           originalPrice: '58,000원',
           discountRate: '20%',
           detailImage: 'https://images.unsplash.com/photo-1618677603544-51162346e165?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          seller: {
+            name: 'Libly',
+            hashTag: '#여성 #니트',
+            sellerImage: 'https://cdn.pixabay.com/photo/2017/02/18/14/02/letters-2077238_960_720.png',
+          },
+        },
+      ],
+      reviews: [
+        {
+          name: 'DDe**',
+          date: '2021.12.05',
+          title: '만족해요',
+          content: '핏이 예쁘네요. 색상도 화면 그대로에요',
+          reviewImage: 'https://image.freepik.com/free-photo/fashionable-young-caucasian-woman-posing_273609-14657.jpg',
+        },
+        {
+          name: 'Le*****',
+          date: '2021.12.11',
+          title: '예뻐요',
+          content: '괜찮아서 한개 더 주문했어요. 가격대비 나쁘지 않아요',
+          reviewImage: '',
         },
       ],
       productDetail: 'Colors: white <br/>Material: Polyester 44.8% Cotton 55.2% <br/>Size-Free(단면/cm)<br/>총장 61 <br/>가슴 55 <br/>소매 77',
-      reviewImage: 'https://image.freepik.com/free-photo/fashionable-young-caucasian-woman-posing_273609-14657.jpg',
-
     };
   },
+  // 가격차이- 파생 성격의 데이터는 computed Data사용
   components: {},
   methods: {
     getData() {
@@ -173,7 +186,7 @@ div.reviewsBody {
 li {
   list-style: none;
 }
-#review301 {
+#review {
   position: relative;
 }
 div.reviewInfoTop {
