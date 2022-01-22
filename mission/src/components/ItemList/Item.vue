@@ -15,8 +15,6 @@
 </template>
 
 <script>
-// import socksBrown from '../../assets/img/Socks_Br.jpg';
-// import socksOrange from '../../assets/img/Socks_O.jpg';
 export default {
   name: 'ItemListItem',
   data() {
