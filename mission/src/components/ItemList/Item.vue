@@ -15,6 +15,8 @@
 </template>
 
 <script>
+// import socksBrown from '../../assets/img/Socks_Br.jpg';
+// import socksOrange from '../../assets/img/Socks_O.jpg';
 export default {
   name: 'ItemListItem',
   data() {
@@ -93,5 +95,25 @@ export default {
 
 </script>
 <style>
-
+img.main {
+  display: inline-block;
+  width: 50%;
+}
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+.discountRate {
+  font-weight: bold;
+  color: red;
+  display: inline-block;
+  padding-right: 10px;
+}
+.discountPrice {
+  display: inline-block;
+}
+.price {
+  text-decoration: line-through;
+  font-size: 15px;
+}
 </style>
