@@ -7,7 +7,5 @@ describe('ItemListPage', () => {
 
     expect(wrapper.find('#item-list-page').exists()).toBe(true);
   });
-  
+
 });
-
-

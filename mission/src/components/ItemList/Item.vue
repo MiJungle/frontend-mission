@@ -90,8 +90,8 @@ export default {
   components: {
   },
 };
-
 </script>
+
 <style>
 img.main {
   display: inline-block;
