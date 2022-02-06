@@ -29,6 +29,7 @@ export default {
     return {
       products: [
         {
+          id: 1,
           name: 'Wool Socks Blue Navy',
           price: '13,000원',
           discountPrice: '12,300원',
@@ -37,6 +38,7 @@ export default {
           mainImage: 'blue',
         },
         {
+          id: 2,
           name: 'Wool Socks Violet Pink',
           price: '13,000원',
           discountPrice: '12,300원',
@@ -45,6 +47,7 @@ export default {
           mainImage: 'violetpink',
         },
         {
+          id: 3,
           name: 'Wool Socks Yellow',
           price: '13,000원',
           discountPrice: '12,300원',
@@ -53,6 +56,7 @@ export default {
           mainImage: 'yellow',
         },
         {
+          id: 4,
           name: 'Wool Socks Turquoise',
           price: '13,000원',
           discountPrice: '12,300원',
@@ -61,6 +65,7 @@ export default {
           mainImage: 'turquoise',
         },
         {
+          id: 5,
           name: 'Wool Socks Brown',
           discountPrice: '13,000원',
           price: '12,300원',
@@ -69,6 +74,7 @@ export default {
           mainImage: 'brown',
         },
         {
+          id: 6,
           name: 'Wool Socks Orange',
           price: '13,000원',
           discountPrice: '12,300원',
@@ -77,6 +83,7 @@ export default {
           mainImage: 'orange',
         },
         {
+          id: 7,
           name: 'Wool Socks Green',
           price: '13,000원',
           discountPrice: '12,300원',
@@ -85,6 +92,7 @@ export default {
           mainImage: 'green',
         },
         {
+          id: 8,
           name: 'Wool Socks Cherry Pink',
           price: '13,000원',
           discountPrice: '12,300원',
