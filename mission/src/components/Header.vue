@@ -16,9 +16,9 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.onScroll);
   },
-  beforeUnmount() {
-    window.removeEventListner('scroll', this.onScroll);
-  },
+  // beforeUnmount() {
+  //   window.removeEventListner('scroll', this.onScroll);
+  // },
   methods: {
     onScroll() {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;

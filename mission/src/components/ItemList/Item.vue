@@ -1,5 +1,6 @@
 <template>
   <div class="item-list-item">
+    <router-link v-bind:to="`/Item/${product.id}`">
       <img class='main' alt='main image' :src="require(`@/assets/img/${product.mainImage}.jpg`)"/>
       <div class="productInfo">
         <div class="productName">{{product.name}}</div>
@@ -8,6 +9,7 @@
         <div class='discountPrice'>{{product.discountPrice}}</div>
         <div class="description">{{product.description}}</div>
       </div>
+    </router-link>
   </div>
 </template>
 
